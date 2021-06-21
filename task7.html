@@ -1,0 +1,36 @@
+<head>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+
+function rqst(){
+input = document.getElementById("input1").value
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.43.30/cgi-bin/task7.py?x=" + input,true);
+xhr.send();
+xhr.onload = function(){	
+	var output = xhr.responseText;
+	document.getElementById('id1').innerHTML = output;
+}
+
+
+
+}
+</script>
+<body>
+
+<pre>
+<div class="box" id="id1">
+<img src="logo.png" class="logo" height=50px; width=50px;>
+<h2> Docker Terminal </h2>
+<input id="input1" type="text" placeholder="Enter command" >
+<button onclick="rqst()" class="btn" > Run Command </button> 
+</br>
+<a href="https://linkedin.com/in/rajneesh-pratap-singh/" class="a">ping developer</a>
+
+
+</div>
+</pre>
+</body>
